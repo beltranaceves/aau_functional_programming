@@ -19,22 +19,21 @@ sumtree (BBranch x t1 t2) = let v1 = sumtree t1
 
 myBigOak = BBranch 14 (BLeaf 13) (BLeaf 17)
 
--- Quicksort
-
-qsort :: (Ord a) => [a] -> [a]
-
-qsort [] = []
-qsort (x:xs) = small ++ [x] ++ big
-                 where small = qsort [a | a <- xs, a <= x]
-                       big   = qsort [a | a <- xs, a > x]
+myBiggestOak = BBranch 14 (BLeaf 13) (BBranch 34 (BLeaf 2) (BLeaf 4))
+-- > gchi sumtree myBiggestOak 
+-- > 67
 
 
 {- Exercise 01: 
     Load the program simple.hs available from the Moodle section about this session. Try
     to evaluate laengde myList. 
+    > laengde myList
+    > 6
+
+
     What do you think the result of sumtree myBigOak will be?
     I expect 14 + 13 + 17 = 44, because its trying to sum all the values in the tree.
-    It does this by recursively summing the values of the left and right subtrees, and the current node.
+    It does this by recursively summing the values of the "left" and "right" subtrees, and the current node.
     Try to explain why, Then check your answer by asking Haskell.
 -}
 
@@ -57,3 +56,18 @@ second :: [a] -> a
 second [] = error "List too short"
 second [x] = error "List too short"
 second (x:xs) = head xs
+
+second' :: [a] -> a
+second' [] = error "List too short"
+second' [x] = error "List too short"
+second' xs = xs !! 1
+
+
+-- Quicksort
+
+qsort :: (Ord a) => [a] -> [a]
+
+qsort [] = []
+qsort (x:xs) = small ++ [x] ++ big
+                 where small = qsort [a | a <- xs, a <= x]
+                       big   = qsort [a | a <- xs, a > x]

@@ -1,3 +1,46 @@
+-- Standard library functions
+
+{-
+Selects the first element of a non-empty list
+    > head [1, 2, 3, 4, 5]
+    > 1
+
+Remove the first element from a non-empty list
+    > tail [1, 2, 3, 4, 5]
+    > [2, 3, 4, 5]
+
+Select the nth element of a list (counting from zero)
+    > [1, 2, 3, 4, 5] !! 2
+
+Select the first n elements of a list
+    > take [1, 2, 3, 4, 5] 3
+    > [1, 2, 3]
+
+Remove the first n elements of a list
+    > drop [1, 2, 3, 4, 5] 2
+    > [3, 4, 5]
+
+Calculate the length of a list
+    > length [1, 2, 3, 4, 5]
+    > 5
+
+Calculate the sum of a list of numbers
+    > sum [1, 2, 3, 4, 5]
+    > 15
+
+Calculate the product of a list of numbers
+    > product [1, 2, 3, 4, 5]
+    > 120
+
+Append two lists
+    > [1, 2, 3] ++ [4, 5]
+    > [1, 2, 3, 4, 5]
+
+Reverse a list
+    > reverse [1, 2, 3, 4, 5]
+    > [5, 4, 3, 2, 1]
+-}
+
 -- Exercise 01: Try out slides 2-7 and 13-16 using GHCI
 
 -- Exercise 02: Fix the sytax errors in the program below,
