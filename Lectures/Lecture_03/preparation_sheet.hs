@@ -27,11 +27,11 @@ is not related to the content on types. Find a terminating reduction sequence of
 
 (λx.xy)(λz.(λu.uu))
 
-(λx.xy)uu
-uuy
+(λx.xy)[x -> (λz.(λu.uu)]
 
-(λz.(λu.uu)) y
+(λz.λu.uu)y
 
+uu
 
 To do this, use the reduction rules of the note.
 -}
