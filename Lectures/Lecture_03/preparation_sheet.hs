@@ -31,7 +31,7 @@ is not related to the content on types. Find a terminating reduction sequence of
 
 (λz.λu.uu)y
 
-uu
+(λu.uu)
 
 To do this, use the reduction rules of the note.
 -}
