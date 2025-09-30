@@ -30,6 +30,10 @@ alldots xst yst = [ a * c + b * d | (a, b) <- xst, (c, d) <- yst ]
 > alldots c d
 > [1]
 
+> a = [(1, 2), (3, 4)]
+> b = [(1, 0), (0, 1)]
+> alldots a b
+> [1, 2, 3, 4]
 -}
 
 
