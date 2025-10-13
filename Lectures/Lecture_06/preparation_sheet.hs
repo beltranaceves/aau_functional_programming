@@ -14,10 +14,24 @@ Chapter 7 to define positions.
     -- Why does using Integral break the type?
     -- Why does the linter prefer this definition over one with the explicit argument?
 positions :: Enum a => [a] -> [Int]
-positions = map fromEnum
+positions = map (\x -> fromEnum x - fromEnum 'a' + 1)
 
 positions' :: Enum a => [a] -> [Int]
-positions' xs = map fromEnum xs
+positions' = foldr p v
+                where
+                    p = (:) . (\x -> fromEnum x - fromEnum 'a' + 1)
+                    -- p = (\x xs -> fromEnum x - fromEnum 'a' + 1 : xs)
+                    v = []
+
+positions'' :: Enum a => [a] -> [Int]
+positions'' = map toNumber
+                where
+                    toNumber y = fromEnum y - fromEnum 'a' + 1
+
+-- basefoldr xs = foldr p v xs
+--                 where
+--                     p = (:) . (+1)
+--                     v = []
 
 {-
 Exercise 2. The function sumsq takes an integer n as its argument and returns the sum of the squares
