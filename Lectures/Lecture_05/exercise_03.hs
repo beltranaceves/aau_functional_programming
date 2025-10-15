@@ -21,12 +21,12 @@ wrapup [True,True,False,False,False ,True] should give us the list [[ True,True 
 -- wrapup :: (Eq a) => [a] -> [[a]]
 
 
-wrapup [] = [] -- ?
-wrapup [a] = [[a]]
-wrapup (x:y:xs) = if x == y then totalList
-                  else totalList ++ [x]
-                  where 
-                    totalList = wrapup y:xs
+-- wrapup [] = [] -- ?
+-- wrapup [a] = [[a]]
+-- wrapup (x:y:xs) = if x == y then totalList
+--                   else totalList ++ [x]
+--                   where 
+--                     totalList = wrapup y:xs
 
 
 
