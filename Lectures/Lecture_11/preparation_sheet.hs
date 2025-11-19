@@ -45,7 +45,7 @@ class Applicative m => Monad m where
 -}
 
 -- alternative :: Monad m => m a -> (a -> m b) -> (a -> c) -> m c
-alternative z s f= z >>= \y -> 
+alternative z s f = z >>= \y -> 
                    s y >>= \_ -> 
                    return (f y)
 {-
