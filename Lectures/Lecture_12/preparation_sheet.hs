@@ -52,8 +52,14 @@ plop f (x:xs) = do
                     y <- f x
                     ys <- plop f xs
                     return (y:ys)
-                    
+
 -- Given the code, f must be a function that returns a Monad type, as it sits in a do block
 
 -- This code implements a Monad version of map, applying a function that returns a Monad to every element of a list
 -- It does not use List as a Monad, and the function f can be of any monadic type
+
+-- plop (\x -> Just(x*2)) [1..4]
+-- > Just [2, 4, 6, 8]
+
+-- plop (\x -. return(Just(x*2))) [1..4]
+-- > [Just 2, Just 4, Just 6, Just 8]
