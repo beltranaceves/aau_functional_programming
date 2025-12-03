@@ -10,6 +10,7 @@ gen3n = nsonly 3
 -- > take 3 gen3n
 -- > [0, 3, 6]
 
+-- nsonly'' n = [(a*n) | a <- [0..]]
 
 -- nsonly' :: Num p => p -> [p]
 nsonly' n = nextN 0
