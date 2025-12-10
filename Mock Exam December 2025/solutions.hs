@@ -1,4 +1,3 @@
-import Distribution.TestSuite (Test(Test))
 -- Name: Beltran Aceves Gil
 -- AAU mail address: baceve25@student.aau.dk
 -- Study number:
@@ -251,6 +250,7 @@ instance Monad Status where
     (Fresh x) >>= f = f x
     (Used x) >>= f = f x
 -- 4.3
+
 -- minimise :: Ord b => Status b -> Status b -> Status b
 minimise a b = do
             realA <- a
@@ -292,6 +292,10 @@ funcB x y (l, r) = (x, y:r:[l])
 exprC = Just [\x -> x + x]
 --------------------------
 -- 5.4
+-- funcE :: p1 -> p2 -> [a]
+funcE x y = []
+--------------------------
+-- 5.5
 -- funcD :: Bool -> String
 -- This function is monomorphic, it is only defined for specific types
 funcD True = "False"
